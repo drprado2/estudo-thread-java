@@ -1,3 +1,5 @@
+package estudo.assincrono;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -78,7 +80,7 @@ public class ControladorAcessoAreaTeste {
 				pessoasEntrar.forEach(p -> controlador.EntrarNaArea(p));
 			}
 		));
- 
+		
 		System.out.format("Iniciando teste, número de threads paralelas \nCada uma com 8 usuários para serem inseridos", threads.size());
 		
 		threads.forEach(t -> t.start());
@@ -90,7 +92,7 @@ public class ControladorAcessoAreaTeste {
 			}
 		});
 		
-		System.out.format("Teste concluído\n Número de usuários na lista: %d\n Usuários na lista: \n",
+		System.out.format("Teste concluído\n Número de usuários na lista: %d\n",
 					ControladorAcessoArea.getInstance().getPessoasNaArea().size());
 	}
 }
